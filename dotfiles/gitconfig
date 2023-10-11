@@ -1,0 +1,49 @@
+[user]
+	email = 10031576+fschmager@users.noreply.github.com
+	name = Frank Schmager
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINU+c0n9LdtAu0uKNc1kZIFbGd5JV8IogEWS1iu7ZBZL frank.schmager+git-commit-signing@datadoghq.com
+[alias]
+	co = checkout
+	# Get the current branch name (not so useful in itself, but used in
+	# other aliases)
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	# Push the current branch to the remote "origin", and set it to track
+	# the upstream branch
+	publish = "!git push -u origin $(git branch-name)"
+	undo = reset --soft HEAD^
+[core]
+	editor = vim
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[mergetool]
+    keepBackup = false
+[merge]
+    tool = vscode
+[mergetool "pycharm"]
+    cmd = /Applications/PyCharm.app/Contents/MacOS/pycharm merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+    trustExitCode = true
+[mergetool "diffmerge"]
+    cmd = /opt/homebrew/bin/diffmerge --merge --result="$MERGED" "$LOCAL" "$(if test -f "$BASE"; then echo "$BASE"; else echo "$LOCAL"; fi)" "$REMOTE"
+[mergetool "vscode"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+[diff]
+    tool = diffmerge
+[difftool "pycharm"]
+    cmd = /Applications/PyCharm.app/Contents/MacOS/pycharm diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+[difftool "diffmerge"]
+    cmd = /opt/homebrew/bin/diffmerge "$LOCAL" "$REMOTE"
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+        allowedSignersFile = /Users/frank.schmager/.ssh/allowed_signers
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true

@@ -1,0 +1,32 @@
+config:
+  backup: true
+  banner: false
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+variables:
+  is_workspace: false
+dotfiles:
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+  f_allowed_signers:
+    src: ssh/allowed_signers
+    dst: ~/.ssh/allowed_signers
+profiles:
+  common:
+    dotfiles:
+    - f_bashrc
+    - f_gitconfig
+    - f_allowed_signers
+  workspace:
+    include:
+    - common
+    variables:
+      is_workspace: true
