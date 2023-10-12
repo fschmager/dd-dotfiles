@@ -19,9 +19,14 @@ dotfiles:
   f_allowed_signers:
     src: ssh/allowed_signers
     dst: ~/.ssh/allowed_signers
+  f_ssh-find-agent.sh:
+    src: ssh-find-agent.sh
+    dst: ~/ssh-find-agent.sh
+    chmod: '755'
 profiles:
   common:
     dotfiles:
+    - f_ssh-find-agent.sh
     - f_bashrc
     - f_gitconfig
     - f_allowed_signers
@@ -30,3 +35,6 @@ profiles:
     - common
     variables:
       is_workspace: true
+  ip-10-126-87-151:
+    dotfiles:
+    - f_ssh-find-agent.sh

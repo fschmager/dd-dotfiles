@@ -111,6 +111,8 @@ plugins=(
 #  fi
 
 source "$OSH"/oh-my-bash.sh
+source /home/bits/.config/dogweb.shellrc
+source ssh-find-agent.sh 
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
