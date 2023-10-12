@@ -141,4 +141,5 @@ source ssh-find-agent.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
-alias dotdrop='dotdrop --cfg=/home/bits/git/dd-dotfiles/dotdrop.conf.yaml'
+
+export DOTDROP_CONFIG="/home/bits/dotfiles/dotdrop.conf.yaml"
