@@ -144,3 +144,7 @@ source "$OSH"/oh-my-bash.sh
 source ssh-find-agent.sh
 export DOTDROP_CONFIG="/home/bits/dotfiles/config.yaml"
 export DOTDROP_PROFILE="workspace"
+
+if [ -f /home/bits/.config/dogweb.shellrc ]; then
+    source /home/bits/.config/dogweb.shellrc
+fi
