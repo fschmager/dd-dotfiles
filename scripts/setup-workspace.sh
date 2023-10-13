@@ -10,11 +10,8 @@ sudo apt -y upgrade
 sudo apt -y install \
 	htop 
 
-# avoid git vs https scheme issues
-git config unset
-
 # install oh-my-bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+HOME="" bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 # install dotdrop and the workspace profile dotfiles
 pip3 install dotdrop --user
