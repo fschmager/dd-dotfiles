@@ -11,7 +11,7 @@ sudo apt -y install \
 	htop 
 
 # install oh-my-bash
-HOME="" bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+export git@github.com:ohmybash/oh-my-bash.git; bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 # install dotdrop and the workspace profile dotfiles
 pip3 install dotdrop --user
