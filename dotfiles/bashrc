@@ -141,7 +141,7 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 
 # CUSTOM
-source ssh-find-agent.sh
+source /home/bits/ssh-find-agent.sh
 export DOTDROP_CONFIG="/home/bits/dotfiles/config.yaml"
 export DOTDROP_PROFILE="workspace"
 
