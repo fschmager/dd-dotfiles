@@ -11,7 +11,9 @@ sudo apt -y upgrade
 
 # install new packages
 sudo apt -y install \
-	htop
+	clang \
+	htop \
+	direnv
 
 # unset to enable cloning because of missing ssh keys, dotdrop will override with new .gitconfig
 git config --global --remove-section "url.git@github.com:"

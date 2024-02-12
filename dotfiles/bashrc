@@ -148,3 +148,5 @@ export DOTDROP_PROFILE="workspace"
 if [ -f /home/bits/.config/dogweb.shellrc ]; then
     source /home/bits/.config/dogweb.shellrc
 fi
+
+eval "$(direnv hook bash)"
