@@ -23,6 +23,14 @@ dotfiles:
     src: ssh-find-agent.sh
     dst: ~/ssh-find-agent.sh
     chmod: '755'
+  f_upgrade-ddr:
+    src: local/bin/upgrade-ddr
+    dst: ~/.local/bin/upgrade-ddr
+    chmod: '755'
+  f_upgrade-ddtool:
+    src: local/bin/upgrade-ddtool
+    dst: ~/.local/bin/upgrade-ddtool
+    chmod: '755'
 profiles:
   common:
     dotfiles:
@@ -35,6 +43,9 @@ profiles:
     - common
     variables:
       is_workspace: true
+    dotfiles:
+    - f_upgrade-ddr
+    - f_upgrade-ddtool
   ip-10-126-87-151:
     dotfiles:
     - f_ssh-find-agent.sh
