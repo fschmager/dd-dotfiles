@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Install DDTool
+echo 'Installing DDtool'
+echo "Downloading binary"
+ddtool_version=$(curl -L https://binaries.ddbuild.io/ddtool/LATEST 2>/dev/null | cut -dv -f2)
+wget "https://binaries.ddbuild.io/ddtool/v${ddtool_version}/ddtool.tar.gz"
+echo "Unpacking binary"
+tar xzvf "ddtool.tar.gz" ./ddtool_linux_amd64
+echo "Moving binary"
+mv ddtool_linux_amd64 "${HOME}/.local/bin/ddtool"
