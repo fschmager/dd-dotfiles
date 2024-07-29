@@ -29,9 +29,9 @@ dotdrop install -f -p workspace
 go install github.com/bazelbuild/buildtools/buildifier@latest
 go install mvdan.cc/gofumpt@latest
 
-# install freephite
+# install graphite
 sudo chmod -R g+w /usr/local/volta
-volta install @bradymadden97/freephite-cli
+npm install -g @withgraphite/graphite-cli@stable
 
 # install grpcurl
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest

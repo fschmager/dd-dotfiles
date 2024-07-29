@@ -47,3 +47,11 @@
 	defaultBranch = main
 [push]
 	autoSetupRemote = true
+[safe]
+	directory = *
+[maintenance]
+	repo = /home/bits/go/src/github.com/DataDog/consul-config
+	repo = /home/bits/go/src/github.com/DataDog/dd-go
+	repo = /home/bits/go/src/github.com/DataDog/dd-source
+	repo = /home/bits/go/src/github.com/DataDog/dogweb
+	repo = /home/bits/go/src/github.com/DataDog/terraform-config

@@ -144,9 +144,11 @@ source "$OSH"/oh-my-bash.sh
 source /home/bits/ssh-find-agent.sh
 export DOTDROP_CONFIG="/home/bits/dotfiles/config.yaml"
 export DOTDROP_PROFILE="workspace"
+export GITLAB_TOKEN=$(pass gitlab_token)
 
 if [ -f /home/bits/.config/dogweb.shellrc ]; then
     source /home/bits/.config/dogweb.shellrc
 fi
 
 eval "$(direnv hook bash)"
+

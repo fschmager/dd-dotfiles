@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
 DDR_BIN_HOME=${HOME}/.local/bin
+TMPDIR=${TMPDIR:-/tmp}
 
+cd ${TMPDIR}
 echo "Installing latest ddr"
 echo "Downloading binary"
 curl -LO https://binaries.ddbuild.io/dd-source/ddr/LATEST/ddr-tar.tar.gz
 echo "Unpacking binary"
-tar -v -C ${DDR_BIN_HOME} -zxvf ddr-tar.tar.gz ./ddr-linux-$(dpkg --print-architecture)
+tar -zxf ddr-tar.tar.gz ddr-linux-$(dpkg --print-architecture)
 echo "Moving binary"
-mv -f ${DDR_BIN_HOME}/./ddr-linux-$(dpkg --print-architecture) ${DDR_BIN_HOME}/ddr
+mv -f ddr-linux-$(dpkg --print-architecture) ${DDR_BIN_HOME}/ddr
+ddr --version
