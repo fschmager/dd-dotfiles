@@ -146,9 +146,20 @@ export DOTDROP_CONFIG="/home/bits/dotfiles/config.yaml"
 export DOTDROP_PROFILE="workspace"
 export GITLAB_TOKEN=$(pass gitlab_token)
 
+export GOPATH="$HOME/go"
+PATH="$GOPATH/bin:$PATH"
+
+alias go='grc go'
+alias make='grc make'
+alias bzl='grc bzl'
+alias rapid='grc rapid'
+
 if [ -f /home/bits/.config/dogweb.shellrc ]; then
     source /home/bits/.config/dogweb.shellrc
 fi
 
-eval "$(direnv hook bash)"
+if [ -f /home/bits/.config/rapid/upgrade-rapid.sh ]; then
+    source /home/bits/.config/rapid/upgrade-rapid.sh
+fi
 
+eval "$(direnv hook bash)"

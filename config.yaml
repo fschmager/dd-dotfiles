@@ -31,6 +31,18 @@ dotfiles:
     src: local/bin/upgrade-ddtool
     dst: ~/.local/bin/upgrade-ddtool
     chmod: '755'
+  d_grc:
+    src: grc
+    dst: ~/.grc
+  f_gotest.conf:
+    src: grc/gotest.conf
+    dst: ~/.grc/gotest.conf
+  f_grc.conf:
+    src: grc/grc.conf
+    dst: ~/.grc/grc.conf
+  f_aliases:
+    src: config/graphite/aliases
+    dst: ~/.config/graphite/aliases
 profiles:
   common:
     dotfiles:
@@ -46,6 +58,10 @@ profiles:
     dotfiles:
     - f_upgrade-ddr
     - f_upgrade-ddtool
+    - d_grc
+    - f_gotest.conf
+    - f_grc.conf
+    - f_aliases
   ip-10-126-87-151:
     dotfiles:
     - f_ssh-find-agent.sh
