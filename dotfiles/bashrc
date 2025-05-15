@@ -149,17 +149,21 @@ export GITLAB_TOKEN=$(pass gitlab_token)
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
 
+export DATADOG_DEVTOOLS_BIN="/home/bits/dd/devtools/bin"
+PATH="$PATH:$DATADOG_DEVTOOLS_BIN"
+
 alias go='grc go'
 alias make='grc make'
 alias bzl='grc bzl'
 alias rapid='grc rapid'
 
+alias git='ssh-find-agent -a && git'
+alias gt='ssh-find-agent -a && gt'
+
+alias dd-compose='docker-compose -f $DATADOG_ROOT/compose.yaml'
+
 if [ -f /home/bits/.config/dogweb.shellrc ]; then
     source /home/bits/.config/dogweb.shellrc
-fi
-
-if [ -f /home/bits/.config/rapid/upgrade-rapid.sh ]; then
-    source /home/bits/.config/rapid/upgrade-rapid.sh
 fi
 
 eval "$(direnv hook bash)"

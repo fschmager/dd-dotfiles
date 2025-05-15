@@ -23,14 +23,6 @@ dotfiles:
     src: ssh-find-agent.sh
     dst: ~/ssh-find-agent.sh
     chmod: '755'
-  f_upgrade-ddr:
-    src: local/bin/upgrade-ddr
-    dst: ~/.local/bin/upgrade-ddr
-    chmod: '755'
-  f_upgrade-ddtool:
-    src: local/bin/upgrade-ddtool
-    dst: ~/.local/bin/upgrade-ddtool
-    chmod: '755'
   d_grc:
     src: grc
     dst: ~/.grc
@@ -56,8 +48,6 @@ profiles:
     variables:
       is_workspace: true
     dotfiles:
-    - f_upgrade-ddr
-    - f_upgrade-ddtool
     - d_grc
     - f_gotest.conf
     - f_grc.conf

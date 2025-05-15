@@ -11,6 +11,10 @@
 	# the upstream branch
 	publish = "!git push -u origin $(git branch-name)"
 	undo = reset --soft HEAD^
+[branch]
+	sort = -committerdate
+[column]
+	ui = auto
 [core]
 	editor = vim
 [url "git@github.com:"]
@@ -29,6 +33,10 @@
 
 [diff]
     tool = diffmerge
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [difftool "pycharm"]
     cmd = /Applications/PyCharm.app/Contents/MacOS/pycharm diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
 [difftool "diffmerge"]
@@ -37,18 +45,28 @@
     cmd = code --wait --diff $LOCAL $REMOTE
 [commit]
 	gpgsign = true
+	verbose = true
 [tag]
 	gpgsign = true
 [gpg]
 	format = ssh
 [gpg "ssh"]
-        allowedSignersFile = /Users/frank.schmager/.ssh/allowed_signers
+	allowedSignersFile = /Users/frank.schmager/.ssh/allowed_signers
 [init]
 	defaultBranch = main
 [push]
+	default = simple
 	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
 [safe]
 	directory = *
+	directory = /home/bits/go/src/github.com/DataDog/dd-source/.git
+[tag]
+    sort = version:refname
 [maintenance]
 	repo = /home/bits/go/src/github.com/DataDog/consul-config
 	repo = /home/bits/go/src/github.com/DataDog/dd-go
