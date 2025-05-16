@@ -13,6 +13,7 @@ sudo apt -y upgrade
 sudo apt -y install \
 	clang \
 	htop \
+	file \
 	direnv
 
 # unset to enable cloning because of missing ssh keys, dotdrop will override with new .gitconfig
@@ -22,7 +23,9 @@ git config --global --remove-section "url.git@github.com:"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 # install dotdrop and the workspace profile dotfiles
+pip install --upgrade pip
 pip3 install dotdrop --user
+export DOTDROP_CONFIG="~/dotfiles/config.yaml"
 dotdrop install -f -p workspace
 
 # install bazel tools
@@ -31,6 +34,7 @@ go install mvdan.cc/gofumpt@latest
 
 # install graphite
 sudo chmod -R g+w /usr/local/volta
+npm install -g npm@latest
 npm install -g @withgraphite/graphite-cli@stable
 
 # install grpcurl
