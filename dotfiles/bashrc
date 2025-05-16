@@ -144,7 +144,6 @@ source "$OSH"/oh-my-bash.sh
 source /home/bits/ssh-find-agent.sh
 export DOTDROP_CONFIG="/home/bits/dotfiles/config.yaml"
 export DOTDROP_PROFILE="workspace"
-export GITLAB_TOKEN=$(pass gitlab_token)
 
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
@@ -157,8 +156,8 @@ alias make='grc make'
 alias bzl='grc bzl'
 alias rapid='grc rapid'
 
-alias git='ssh-find-agent -a && git'
-alias gt='ssh-find-agent -a && gt'
+# alias git='ssh-find-agent -a && git'
+# alias gt='ssh-find-agent -a && gt'
 
 alias dd-compose='docker-compose -f $DATADOG_ROOT/compose.yaml'
 
